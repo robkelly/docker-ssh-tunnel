@@ -14,6 +14,11 @@ else
   echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
 fi
 
+echo ssh -vN \
+  ${SSH_ALIVE_INTERVAL+"-o ServerAliveInterval=$SSH_ALIVE_INTERVAL"} \
+  -l ${SSH_USER:-root} \
+  $HOST \
+  -p ${SSH_PORT:-22}
 ssh -vN \
   ${SSH_ALIVE_INTERVAL+"-o ServerAliveInterval=$SSH_ALIVE_INTERVAL"} \
   -l ${SSH_USER:-root} \
