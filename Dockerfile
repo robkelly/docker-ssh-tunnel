@@ -6,8 +6,8 @@ RUN apk --no-cache add \
     echo "  ServerAliveInterval 60" >> /etc/ssh/ssh_config && \
     mkdir -p ~/.ssh
 
-EXPOSE 446/tcp
-EXPOSE 446/udp
+EXPOSE 445/tcp
+EXPOSE 445/udp
 
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
