@@ -18,5 +18,4 @@ ssh -vN \
   ${SSH_ALIVE_INTERVAL+"-o ServerAliveInterval=$SSH_ALIVE_INTERVAL"} \
   -l ${SSH_USER:-root} \
   $HOST \
-  -p ${SSH_PORT:-22} \
-  -L *:22:localhost:$PORT
+  -p ${SSH_PORT:-22}
